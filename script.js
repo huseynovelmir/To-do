@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
         e.preventDefault()
 
 
-        const task = input.value;
+        let task = input.value;
 
         
         if (!task.trim()) {
@@ -109,20 +109,15 @@ window.addEventListener('load', () => {
         })
 
 
-        let form = document.querySelector('form');
+
         let ls = localStorage.getItem('todo');
-        let text = document.getElementsByClassName('text')
         let todo = ls ?JSON.parse(ls):[0];
-        form.addEventListener('click', () => {
-            e.preventDefault();
-            let inpdata = form[0].value;
+            console.log(todo)
+            let inpdata = task_input_el.value;
             todo.push(inpdata)
             localStorage.setItem('todo',JSON.stringify(todo))
             
-        })
-
-         
-        
+   
     })
 
 
